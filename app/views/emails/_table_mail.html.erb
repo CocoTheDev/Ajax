@@ -1,18 +1,23 @@
 
-<table>
+<table class="standard-table">
 					<thead>
 						<tr>
-							<th>Object</th>
-							<th>Body</th>
+							<th class="th_object">Object</th>
+							<th class="th_body">Emails</th>
 						</tr>
 					</thead>
 					<tbody>
           <% @emails.each do |email| %>
-						<tr>
-							<td class="cobject"> <%= email.object %></td>
+						<tr class="table">
+
+							<td class="cobject"> 
+							<%= email.object %></td>
+
+
 							<td class="cbody"> 
-							<%= email.object %> <br> <%= email.body %>
-							
+								<%= email.object %> <br> <%= email.body %>
+								<br> 
+								<%= link_to 'delete', method: :delete, id: email.id %>
 							
 							</td>
 						</tr>
