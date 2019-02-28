@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :tasks, except: [:show]
 
-  root to: "email#index"
+  root to: "emails#index"
   resources :emails
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
