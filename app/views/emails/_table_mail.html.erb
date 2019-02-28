@@ -8,16 +8,18 @@
 					</thead>
 					<tbody>
           <% @emails.each do |email| %>
-						<tr class="table">
+						<tr class="table_row">
 
 							<td class="cobject"> 
 							<%= email.object %></td>
 
 
 							<td class="cbody"> 
-								<%= email.object %> <br> <%= email.body %>
+								<h4><center><%= email.object %></center></h4>
 								<br> 
-								<%= link_to 'delete', method: :delete, id: email.id %>
+								<%= email.body %>
+								<br> 
+								<%= link_to "Supprimer", email, method: :delete, data: {confirm: 'Are you sure?'}, remote: true %>
 							
 							</td>
 						</tr>

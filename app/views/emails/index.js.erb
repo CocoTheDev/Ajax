@@ -1,1 +1,9 @@
-
+$(document).ready(function() {
+  console.log("loool ça marche ");
+$(".cobject").click(function(){
+ if (<%@email.read%> === false)
+ <%@email.read%> = true 
+  $(".cobject").style.backgroundColor = "";
+   
+});
+});

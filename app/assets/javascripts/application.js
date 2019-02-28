@@ -60,6 +60,12 @@ $(document).ready(function() {
     $(this).next().slideToggle();
   });
 
+  $(".cobject").click(function () {  
+    $("td.cbody").hide();
+    $(this).next().slideToggle();
+  });
+
+
 
 });
 
