@@ -51,4 +51,15 @@ $(document).ready(function() {
       dataType: "script"
     });
   });
+
+
+
+  $("td.cbody").hide();
+  $("td").click(function () {  
+    $("td.cbody").hide();
+    $(this).next().slideToggle();
+  });
+
+
 });
+

@@ -9,8 +9,12 @@
 					<tbody>
           <% @emails.each do |email| %>
 						<tr>
-							<td> <%= email.object %></td>
-							<td> <%= email.body %></td>
+							<td class="cobject"> <%= email.object %></td>
+							<td class="cbody"> 
+							<%= email.object %> <br> <%= email.body %>
+							
+							
+							</td>
 						</tr>
           <% end %>
 					</tbody>
