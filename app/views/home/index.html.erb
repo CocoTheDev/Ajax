@@ -1,0 +1,51 @@
+<h1 class="text-center mb-4">Welcome to my todolist app</h1>
+<%= render 'layouts/task_form'  %>
+<div class="container">
+
+  <div class="tab">
+    <% @categories.each do |category| %>
+      <button class="tablinks"><%= category.title %></button>
+    <% end %>
+  </div>
+
+  <ul id='lists'>
+  <% @categories.each_with_index do  |category,i|%>
+  
+  <% if i == 0  %>
+    <div class="cardtab">
+  <% else %>
+    <div class="cardtab collapse">
+  <% end %>
+  
+    <ul >
+      <% category.tasks.each do |task|  %>
+      <% if task.status == true %>
+        <li class="text-success" id="task_<%=task.id%>">
+      <% else %>
+          <li id="task_<%=task.id%>">
+      <% end %>
+        <%= task.title  %>
+        <% unless task.deadline.nil? %>
+          , to read: <%= task.deadline.strftime('%D')  %>
+        <% end %>
+
+        <%= check_box_tag dom_id(task), nil, task.status, :class => 'checkbox' %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  </ul>
+</div>
+
+<div class="overflow-hidden d-flex">
+    <% @tasks.each do |task|  %>
+      <div class="card col-3">
+        <% unless task.image.nil? %>
+          <%= image_tag task.image, class: "rounded-circle" %>
+        <% end %>
+      </div>
+    <% end %>
+</div>
+
+<%= render 'modales/sign_in' %>
